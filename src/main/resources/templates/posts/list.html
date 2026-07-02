@@ -8,16 +8,21 @@
 </head>
 <body>
 <main>
-    <h1>社内つぶやきボード</h1>
-    <nav>
-        <a th:href="@{/posts}">一覧</a>
-        |
-        <form th:action="@{/posts/new}" method="get">
-            <button type="submit">投稿</button>
-        </form>
-    </nav>
+    <header class="page-header">
+        <div>
+            <p class="page-header__eyebrow">Repository</p>
+            <h1>社内つぶやきボード</h1>
+        </div>
+        <nav class="page-nav">
+            <a th:href="@{/posts}">一覧</a>
+        </nav>
+    </header>
 
-    <section>
+    <section class="repo-shell">
+        <div class="repo-tabs">
+            <a class="repo-tab repo-tab--active" th:href="@{/posts}">Posts</a>
+        </div>
+
         <div class="toolbar">
             <form class="search-form" th:action="@{/posts}" method="get">
                 <label class="search-form__label" for="post-search">本文検索</label>
@@ -29,7 +34,11 @@
             </form>
         </div>
 
-        <p th:if="${#lists.isEmpty(posts)}">まだ投稿はありません</p>
+        <form th:action="@{/posts/new}" method="get">
+            <button class="primary-button" type="submit">投稿</button>
+        </form>
+
+        <p class="empty-state" th:if="${#lists.isEmpty(posts)}">まだ投稿はありません</p>
         <a class="post__link" th:each="post : ${posts}" th:href="@{/posts/{id}(id=${post.id})}">
             <article class="post">
                 <p class="post__author" th:text="${post.author}">投稿者</p>

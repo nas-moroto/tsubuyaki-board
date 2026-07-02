@@ -8,23 +8,28 @@
 </head>
 <body>
 <main>
-    <h1>新規投稿</h1>
-    <nav>
-        <a th:href="@{/posts}">一覧に戻る</a>
-    </nav>
-
-    <form th:action="@{/posts}" th:object="${postForm}" method="post">
+    <header class="page-header">
         <div>
+            <p class="page-header__eyebrow">New post</p>
+            <h1>新規投稿</h1>
+        </div>
+        <nav class="page-nav">
+            <a th:href="@{/posts}">一覧に戻る</a>
+        </nav>
+    </header>
+
+    <form class="form-panel" th:action="@{/posts}" th:object="${postForm}" method="post">
+        <div class="form-field">
             <label for="author">投稿者</label>
             <input type="text" id="author" th:field="*{author}" maxlength="30" required>
             <p class="error" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">エラー</p>
         </div>
-        <div>
+        <div class="form-field">
             <label for="body">本文 (280 文字まで)</label>
             <textarea id="body" th:field="*{body}" maxlength="280" rows="4" required></textarea>
             <p class="error" th:if="${#fields.hasErrors('body')}" th:errors="*{body}">エラー</p>
         </div>
-        <button type="submit">投稿</button>
+        <button class="primary-button" type="submit">投稿</button>
     </form>
 </main>
 </body>

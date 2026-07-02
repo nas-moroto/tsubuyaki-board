@@ -13,6 +13,16 @@ MERGE INTO posts (id, author, body, created_at) KEY(id) VALUES
     (7,  'nakamura', 'Controller は MockMvc でビュー名と model を確認します。', TIMESTAMP '2026-06-26 09:48:00'),
     (8,  'kato',    'Flyway の migration は Oracle と H2 の両方で読める構文にします。', TIMESTAMP '2026-06-26 09:56:00'),
     (9,  'yoshida', '仕上げ前に ./mvnw -B -Ph2 verify を緑にします。', TIMESTAMP '2026-06-26 10:04:00'),
-    (10, 'watanabe', 'プロンプト履歴は education/prompts-i-used.md に残します。', TIMESTAMP '2026-06-26 10:12:00');
+    (10, 'watanabe', 'プロンプト履歴は education/prompts-i-used.md に残します。', TIMESTAMP '2026-06-26 10:12:00'),
+    (11, 'inoue',   '検索ボックスから本文の部分一致を試せるサンプル投稿です。', TIMESTAMP '2026-06-26 10:20:00'),
+    (12, 'hayashi', 'LIKE 検索で 100% という文字をそのまま探せるか確認します。', TIMESTAMP '2026-06-26 10:28:00'),
+    (13, 'mori',    'アンダースコア A_B も文字として検索できることを見ます。', TIMESTAMP '2026-06-26 10:36:00'),
+    (14, 'kimura',  '詳細画面ではいいね数と Like ボタンの状態を確認できます。', TIMESTAMP '2026-06-26 10:44:00'),
+    (15, 'shimizu', '同じブラウザからもう一度いいねすると解除されます。', TIMESTAMP '2026-06-26 10:52:00'),
+    (16, 'yamaguchi', '投稿一覧では本文、投稿者、投稿日、いいね数を確認します。', TIMESTAMP '2026-06-26 11:00:00'),
+    (17, 'abe',     'TDD では RED GREEN REFACTOR の順番を守ります。', TIMESTAMP '2026-06-26 11:08:00'),
+    (18, 'maeda',   '検索結果が 0 件の場合はまだ投稿はありませんと表示します。', TIMESTAMP '2026-06-26 11:16:00'),
+    (19, 'fujita',  '51件以上一致した場合でも新着50件だけを表示します。', TIMESTAMP '2026-06-26 11:24:00'),
+    (20, 'endo',    '今日の仕上げは ./mvnw -B -Ph2 verify の成功確認です。', TIMESTAMP '2026-06-26 11:32:00');
 
-ALTER SEQUENCE posts_seq RESTART WITH 11;
+ALTER SEQUENCE posts_seq RESTART WITH 21;
